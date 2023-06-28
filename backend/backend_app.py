@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import uuid
 import file_handler
 
 app = Flask(__name__)
@@ -10,8 +9,12 @@ POSTS = file_handler.load_file('posts.json')
 
 
 def id_generator():
-    """Generates a unique ID using UUID."""
-    return str(uuid.uuid4())
+    if POSTS:
+        last_id = POSTS[-1]['id']
+    else:
+        last_id = 0
+    new_id = last_id + 1
+    return new_id
 
 
 @app.route('/api/posts', methods=['GET'])
@@ -36,7 +39,7 @@ def add_posts():
     return jsonify(add_post), 201
 
 
-@app.route('/api/posts/<string:post_id>', methods=['DELETE'])                       #WORKING IN POSTMAN FINE BUT NOT WORKING IN THE WEBSITE, BUTTON DOES NOTHING
+@app.route('/api/posts/<int:post_id>', methods=['DELETE'])
 def delete(post_id):
     post_to_delete = None
     for post in POSTS:
@@ -92,7 +95,7 @@ def search_posts():
     return jsonify(matching_posts)
 
 
-@app.route('/api/posts', methods=['GET'])                   #NOT WORKING
+@app.route('/api/posts', methods=['GET'])  # NOT WORKING
 def sort_posts():
     sort_by = request.args.get('sort')
     direction = request.args.get('dir')
