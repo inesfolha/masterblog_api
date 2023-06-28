@@ -17,11 +17,6 @@ def id_generator():
     return new_id
 
 
-@app.route('/api/posts', methods=['GET'])
-def get_posts():
-    return jsonify(POSTS)
-
-
 @app.route('/api/posts', methods=['POST'])
 def add_posts():
     title = request.json.get('title')
@@ -55,7 +50,7 @@ def delete(post_id):
     return jsonify({"error": "Post not found"}), 404
 
 
-@app.route('/api/posts/<string:post_id>', methods=['PUT'])
+@app.route('/api/posts/<int:post_id>', methods=['PUT'])
 def update_post(post_id):
     for post in POSTS:
         if post['id'] == post_id:
@@ -100,15 +95,23 @@ def sort_posts():
     sort_by = request.args.get('sort')
     direction = request.args.get('dir')
 
-    sorted_posts = POSTS
+    valid_sort_fields = ['title', 'content']
+    valid_sort_directions = ['asc', 'desc']
 
-    if sort_by is not None:
-        if direction and direction.lower() == 'desc':
+    if sort_by and direction:
+        if sort_by not in valid_sort_fields or direction not in valid_sort_directions:
+            return jsonify({"error": "Invalid sort field or direction"}), 400
+
+        elif direction and direction.lower() == 'desc':
             sorted_posts = sorted(POSTS, key=lambda x: x[sort_by], reverse=True)
+            return jsonify(sorted_posts)
+
         elif direction and direction.lower() == 'asc':
             sorted_posts = sorted(POSTS, key=lambda x: x[sort_by], reverse=False)
+            return jsonify(sorted_posts)
 
-    return jsonify(sorted_posts)
+    else:
+        return jsonify(POSTS)
 
 
 if __name__ == '__main__':
