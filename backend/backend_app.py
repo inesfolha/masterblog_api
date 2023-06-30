@@ -126,7 +126,7 @@ def search_posts():
     return jsonify(matching_posts)
 
 
-@app.route('/api/posts', methods=['GET'])  # NOT WORKING
+@app.route('/api/posts', methods=['GET'])
 def sort_posts():
     """ Sorts posts based on a specified field and direction.
 
