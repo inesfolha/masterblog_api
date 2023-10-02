@@ -23,7 +23,7 @@ This project was developed as a training exercise after my first deep dive into 
 
 MasterBlog API uses a simple JSON file as storage for all blog posts data and allows you to add new posts, update existing ones and deleting any unwanted post via our customized user interface. 
 
-The frontend was provided as a template, so in this case it was not built from scratch but instead was adapted to the built API.   
+The frontend, [HTML](https://github.com/inesfolha/masterblog_api/blob/main/frontend/templates/index.html), [Javascript](https://github.com/inesfolha/masterblog_api/blob/main/frontend/static/main.js) and [CSS](https://github.com/inesfolha/masterblog_api/blob/main/frontend/static/styles.css) were provided for this project so in this case it was not built from scratch but instead was adapted to the built API.   
 
 The API was built using the Flask framework. 
 
@@ -76,10 +76,10 @@ If you downloaded a ZIP archive, extract its contents to a directory of your cho
 ```
 
 5. Update the backend URL accordingly to where you are running it.
-Reference-style: 
+ 
 ![Example][image]
 
-[image]: instructions_step5.jpg "Step 5"
+[image]: https://github.com/inesfolha/masterblog_api/blob/main/frontend/static/instructions_step5.jpg?raw=true "Step 5"
 
 [Back to the Top](#top)
 
@@ -98,5 +98,10 @@ Reference-style:
 * This project was built to have the API running in the codio environment and the frontend on localhost, so there may be some CORS limitations while running both files scrips on localhost. 
 
 
+* Despite the API having a search functionality we can use, the user interface currently still does not support it, I am looking for updating the user interface in the future, to support all API functionality.  
+
+
 [Back to the Top](#top)
+
+
 
