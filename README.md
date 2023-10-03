@@ -19,11 +19,9 @@ Welcome to MasterBlog API, similarly to [MasterBlog](https://github.com/inesfolh
 
 Contrasting with [MasterBlog](https://github.com/inesfolha/masterblog), where the flask app was directly running and loading the HTML templates using jinja to display the information, MasterBlog API relies on a frontend application that interacts with the API
 
-This project was developed as a training exercise after my first deep dive into API development. 
+Since the frontend is not fully developed to yet support all the API functionalities, you can also use the full API with Postman or a similar software. 
 
-MasterBlog API uses a simple JSON file as storage for all blog posts data and allows you to add new posts, update existing ones and deleting any unwanted post via our customized user interface. 
-
-The frontend, [HTML](https://github.com/inesfolha/masterblog_api/blob/main/frontend/templates/index.html), [Javascript](https://github.com/inesfolha/masterblog_api/blob/main/frontend/static/main.js) and [CSS](https://github.com/inesfolha/masterblog_api/blob/main/frontend/static/styles.css) were provided for this project so in this case it was not built from scratch but instead was adapted to the built API.   
+MasterBlog API uses a simple JSON file as storage for all blog posts data and allows you to add new posts, update existing ones and deleting any unwanted post via our customized user interface.
 
 The API was built using the Flask framework. 
 
@@ -51,6 +49,8 @@ The API was built using the Flask framework.
 - Flask installed.
 - To make the backend work, you may need to install a package called flask-cors.
 
+- If you want to use the all the API functions, you can use [Postman](https://www.postman.com/)
+
 ### Installation Steps
 
 1. Clone this repository or download the script file:
@@ -61,21 +61,13 @@ git clone https://github.com/inesfolha/masterblog_api.git
 
 If you downloaded a ZIP archive, extract its contents to a directory of your choice.
 
-2. Go to the script's directory:
+2. Go to the script's directory.
 
+3. Run the backend and the frontend scripts. 
 
-3. To run the script, open your terminal and execute the following command:
-```bash
+4. Open the frontend URL on a browser.
 
-```
-
-4. Open a browser tab on:
-
-```bash
-
-```
-
-5. Update the backend URL accordingly to where you are running it.
+5. Update the backend URL in the frontend page accordingly to where you are running the backend.
  
 ![Example][image]
 
@@ -84,7 +76,7 @@ If you downloaded a ZIP archive, extract its contents to a directory of your cho
 [Back to the Top](#top)
 
 ### Usage
- * [Watch Demo](link to video)
+ * [Watch Demo](https://www.youtube.com/watch?v=mOzXPNffNbs)
 
 
 ### Limitations
@@ -98,7 +90,7 @@ If you downloaded a ZIP archive, extract its contents to a directory of your cho
 * This project was built to have the API running in the codio environment and the frontend on localhost, so there may be some CORS limitations while running both files scrips on localhost. 
 
 
-* Despite the API having a search functionality we can use, the user interface currently still does not support it, I am looking for updating the user interface in the future, to support all API functionality.  
+* Despite the API having working functions such us search, sort and update, the user interface currently still does not support it, I am looking for updating the user interface in the future, or if you would like to develop it yourself, you are welcome to do so.   
 
 
 [Back to the Top](#top)
