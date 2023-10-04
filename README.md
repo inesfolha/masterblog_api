@@ -10,6 +10,7 @@
    - [Installation Steps](#installation-steps)
 4. [Usage](#usage)
 5. [Limitations](#limitations)
+6. [Contributions](#contributions)
 
 
 
@@ -95,5 +96,9 @@ If you downloaded a ZIP archive, extract its contents to a directory of your cho
 
 [Back to the Top](#top)
 
+## Contributions
 
+Contributions to this project are welcome. If you'd like to contribute, please fork the repository, make your changes, and create a pull request.
+
+[Back to the Top](#top)
 
